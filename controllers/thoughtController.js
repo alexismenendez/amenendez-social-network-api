@@ -6,7 +6,7 @@ module.exports = {
             const thoughts = await Thought.find();
             res.json(thoughts);
         } catch (err) {
-            res.status(500).json(err)
+            res.status(500).json({ message: err })
         }
     },
 
@@ -34,7 +34,7 @@ module.exports = {
                 { runValidators: true, new: true }
             )
 
-           res.json(newThought, assignThought)
+           res.json(newThought)
         } catch (err) {
             res.status(500).json(err)
         }

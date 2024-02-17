@@ -38,7 +38,7 @@ module.exports = {
         } catch (err) {
             res.status(500).json(err)
         }
-    },
+    }, 
 
     async updateThought (req, res) {
         try {
@@ -61,7 +61,7 @@ module.exports = {
 
     async deleteThought (req, res) {
         try {
-            const delThought = await Thought.findOneAndDelete({ _id: req.params.ThoughtId })
+            const delThought = await Thought.findOneAndDelete({ _id: req.params.thoughtId })
 
             if (!delThought) {
                 res.status(404).json({ message: "No matching thought found!" })
